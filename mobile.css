@@ -1,0 +1,129 @@
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: rgba(28, 26, 26, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        z-index: 999;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-list.active {
+        right: 0;
+    }
+
+    .nav-list li {
+        margin: 1.5rem 0;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .nav-list.active li {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .nav-list a {
+        font-size: 1.2rem;
+        color: white;
+    }
+
+    /* About section mobile styling */
+    .about_me {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        transition: all 0.3s ease;
+    }
+
+    .about_text {
+        width: 90%;
+        margin: 0 auto;
+        transform: scale(0.98);
+        transition: transform 0.3s ease;
+    }
+
+    .about_text:hover {
+        transform: scale(1);
+    }
+
+    .office_img {
+        width: 90%;
+        margin: 0 auto;
+        transform: scale(0.98);
+        transition: transform 0.3s ease;
+    }
+
+    .office_img:hover {
+        transform: scale(1);
+    }
+
+    /* Other mobile styles remain the same */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .intro {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .first_text {
+        font-size: 2rem;
+    }
+
+    .icon-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .contact-form {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* Small Screen Adjustments */
+@media (max-width: 480px) {
+    .card {
+        padding: 1.5rem;
+    }
+
+    .first_text {
+        font-size: 1.8rem;
+    }
+
+    .about_text h2 {
+        font-size: 1.8rem;
+    }
+
+    .icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

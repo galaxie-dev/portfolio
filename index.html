@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Evans Osumba - Software Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="animations.css" rel="stylesheet">
+    <link href="mobile.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <p class="p_evans">Evans Osumba</p>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="intro">
+        <div class="intro-content">
+            <div class="intro-text animate-fadeIn">
+                <p class="first_text">
+                    Hi there! 👋<br>
+                    I'm Evans Osumba<br>
+                    <span class="highlight">Software Developer</span>
+                </p>
+                <p class="subtitle">Turning ideas into reality through code</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/galaxie-dev" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/evans-osumba-0565b42b0/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/PinterestUTD" target="_blank" class="social-icon">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://wa.me/254707868194" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="profile-container">
+                <div class="profile-wrapper">
+                    <img src="evans2.jpeg" alt="Profile Picture" id="profile-image">
+                    <button onclick="document.getElementById('photo-upload').click()" class="upload-btn">
+                        Update Photo
+                    </button>
+                    <input type="file" id="photo-upload" accept="image/*" style="display: none">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about_me">
+        <!-- <div class="about-image">
+            <img class="office_img animate-slideIn" src="about" alt="Developer workspace"> -->
+        </div>
+        <div class="about_text">
+            <h2>About Me</h2>
+            <p class="about_p">
+                I am a passionate Full Stack Developer based in Nairobi, Kenya, specializing in building 
+                robust and scalable web applications. Currently pursuing Communication and Computer 
+                Networks at The Technical University of Kenya.
+            </p>
+            <p class="about_p">
+                <br>My expertise lies in the Front End, with 
+                a particular focus on mastering front-end technologies like React.js, HTML5, CSS3, 
+                and JavaScript ES6+. I have a keen eye for design and a deep understanding of 
+                modern web technologies, enabling me to bridge the gap between technical 
+                functionality and user-centered design.            
+            </p>
+        
+            <p class="about_p">
+                <br>I am highly proficient in building scalable, high-performance web applications 
+               and continuously expand my knowledge to embrace emerging tools and frameworks. 
+               Whether it’s optimizing performance, crafting reusable components, or ensuring                
+               cross-browser compatibility, I am dedicated to delivering solutions that align 
+               with the latest industry standards.
+            </p>
+            <p class="about_p">
+                <br>With a commitment to learning, innovation, and adaptability, I strive to 
+                contribute to impactful projects and stay at the forefront of web development trends.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="skillz">
+        <h2 class="skills-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="align">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <h3>HTML5 & CSS3</h3>
+                <p>
+                    Modern web development with semantic HTML5 and advanced CSS3 features including Flexbox, Grid, and Animations.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="align">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <h3>JavaScript</h3>
+                <p>
+                    ES6+, DOM manipulation, Async/Await, and modern JavaScript frameworks.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="align">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <h3>MySQL</h3>
+                <p>
+                    Database design, querying, stored procedures, and optimization techniques.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="align">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <h3>Java</h3>
+                <p>
+                    OOP principles, Spring Framework, multithreading, and JVM-based application development.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="align">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <h3>Python</h3>
+                <p>
+                    NoSQL database design, CRUD operations, and Mongoose ODM.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="align">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <h3>Git & GitHub</h3>
+                <p>
+                    Version control, branching strategies, and collaborative development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="education_out">
+        <h2 class="ability_text" style="font-size:xx-large;">Education</h2>
+        <div class="education">
+            <img class="edu_img" src="istockphoto-1205507976-612x612.jpg">
+            <p class="ability_text">Bachelor Of Technology Communication And Computer Networks<br>
+                2023-2027<br>
+                Still pursuing
+            </p>
+        </div>
+
+        <div class="education">
+            <img class="edu_img" src="istockphoto-1205507976-612x612.jpg">
+            <p class="ability_text">Advanced Diploma in Software Engineering<br>
+                2023-2025<br>
+                Still pursuing
+            </p>
+        </div>
+
+        <div class="education">
+            <img class="edu_img" src="istockphoto-1205507976-612x612.jpg">
+            <p class="ability_text">Certificate in ICDL<br>
+                2023<br>
+                Completed.
+            </p>
+        </div>
+    </div>
+
+    <section id="contact" class="contact">
+        <div class="contact_in">
+            <img class="contact_us" src="Get-in-Touch2.jpg">
+            <form class="contact-form" action="submit-form.php" method="POST">
+                <h2 class="ability_text" style="font-size:x-large;color: blue;"><b>Get in touch</b></h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone No:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p class="copyright"> All Rights Reserved | Terms of Use | Privacy and Cookie policy | 2024</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const navList = document.querySelector('.nav-list');
+            navList.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navList = document.querySelector('.nav-list');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!navList.contains(e.target) && !mobileMenuToggle.contains(e.target) && navList.classList.contains('active')) {
+                navList.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navList = document.querySelector('.nav-list');
+                navList.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar hide/show on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const navbar = document.querySelector('.navbar');
+            
+            if (scrollTop > lastScrollTop) {
+                navbar.style.top = '-100px';
+            } else {
+                navbar.style.top = '0';
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
