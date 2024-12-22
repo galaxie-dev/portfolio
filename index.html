@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <link href="animations.css" rel="stylesheet">
-    <link href="mobile.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -51,11 +49,40 @@
             </div>
             <div class="profile-container">
                 <div class="profile-wrapper">
-                    <img src="evans2.jpeg" alt="Profile Picture" id="profile-image">
-                    <button onclick="document.getElementById('photo-upload').click()" class="upload-btn">
-                        Update Photo
-                    </button>
-                    <input type="file" id="photo-upload" accept="image/*" style="display: none">
+                    <div class="card">
+                        <button class="mail">
+                            <svg class="lucide lucide-mail" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <rect rx="2" y="4" x="2" height="16" width="20"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                        </button>
+                        <div class="profile-pic">
+                            <img src="evans2.jpeg" alt="Evans Osumba Profile Picture">
+                        </div>
+                        <div class="bottom">
+                            <div class="content">
+                                <span class="name">Evans Osumba</span>
+                                <span class="about-me">Software Developer | Python & Web Technologies Enthusiast</span>
+                            </div>
+                            <div class="bottom-bottom">
+                                <div class="social-links-container">
+                                    <a href="https://github.com/galaxie-dev" target="_blank" class="social-icon">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/evans-osumba-0565b42b0/" target="_blank" class="social-icon">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="https://twitter.com/PinterestUTD" target="_blank" class="social-icon">
+                                        <i class="fab fa-x-twitter"></i>
+                                    </a>
+                                    <a href="https://wa.me/254707868194" target="_blank" class="social-icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                                <button class="button">Contact Me</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -201,19 +228,28 @@
     <section id="contact" class="contact">
         <div class="contact_in">
             <img class="contact_us" src="Get-in-Touch2.jpg">
-            <form class="contact-form" action="submit-form.php" method="POST">
+            <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
                 <h2 class="ability_text" style="font-size:x-large;color: blue;"><b>Get in touch</b></h2>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required>   
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                <label for="phone">Phone No:</label>
-                <input type="tel" id="phone" name="phone" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+                    <section id="about" class="about">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                             
+                                    <!-- <button class="button">Contact Me</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+             
+                
+             
     </section>
 
     <footer class="footer">
@@ -270,6 +306,46 @@
             }
             lastScrollTop = scrollTop;
         });
+
+        async function submitForm(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contactForm');
+            const formData = new URLSearchParams(new FormData(form));
+            
+            // Try ports 8000-8009
+            for (let port = 8000; port < 8010; port++) {
+                try {
+                    const response = await fetch(`http://localhost:${port}/api/submit`, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    });
+
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        alert('Message sent successfully!');
+                        form.reset();
+                        return;
+                    } else {
+                        alert(result.message || 'Failed to send message. Please try again.');
+                        return;
+                    }
+                } catch (error) {
+                    if (port === 8009) {
+                        console.error('Error:', error);
+                        alert('Failed to connect to server. Please make sure the server is running and try again.');
+                    }
+                    // Continue trying next port
+                    continue;
+                }
+            }
+        }
     </script>
 </body>
 </html>
+
+
