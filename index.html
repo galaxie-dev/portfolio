@@ -1,86 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Evans Osumba - Software Developer</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evans Osumba - Software Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <p class="p_evans">Evans Osumba</p>
         <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         <ul class="nav-list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+            <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
+            <li><a href="#education" onclick="closeMobileMenu()">Education</a></li>
+            <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
+            <li><a href="#experience" onclick="closeMobileMenu()">Experience</a></li>
+            <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- Home Section -->
     <section id="home" class="intro">
         <div class="intro-content">
             <div class="intro-text animate-fadeIn">
                 <p class="first_text">
-                    Hi there! 👋<br>
-                    I'm Evans Osumba<br>
-                    <span class="highlight">Software Developer</span>
+                    <span id="greeting">Hi there! 👋</span><br>
+                    <span id="name">I'm Evans Osumba</span><br>
+                    <span id="highlight" class="highlight"></span>
                 </p>
-                <p class="subtitle">Turning ideas into reality through code</p>
-                
+                <p class="subtitle" id="subtitle1"></p>
+                <p class="subtitle" id="subtitle2"></p>
+                <p class="subtitle" id="subtitle3"></p>
+               
                 <div class="social-links">
-                    <a href="https://github.com/galaxie-dev" target="_blank" class="social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/evans-osumba-0565b42b0/" target="_blank" class="social-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://twitter.com/PinterestUTD" target="_blank" class="social-icon">
-                        <i class="fab fa-x-twitter"></i>
-                    </a>
-                    <a href="https://wa.me/254707868194" target="_blank" class="social-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+                    <a href="https://github.com/galaxie-dev" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/evans-osumba-0565b42b0/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/OsumbaKe" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://wa.me/254793033363" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
+                <button class="hire-me">Hire Me</button>
             </div>
             <div class="profile-container">
                 <div class="profile-wrapper">
                     <div class="card">
-                        <button class="mail">
-                            <svg class="lucide lucide-mail" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                <rect rx="2" y="4" x="2" height="16" width="20"></rect>
-                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                            </svg>
-                        </button>
                         <div class="profile-pic">
-                            <img src="evans2.jpeg" alt="Evans Osumba Profile Picture">
+                            <img src="evans2.jpeg" alt="Evans Osumba">
                         </div>
                         <div class="bottom">
-                            <div class="content">
-                                <span class="name">Evans Osumba</span>
-                                <span class="about-me">Software Developer | Python & Web Technologies Enthusiast</span>
-                            </div>
-                            <div class="bottom-bottom">
-                                <div class="social-links-container">
-                                    <a href="https://github.com/galaxie-dev" target="_blank" class="social-icon">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/evans-osumba-0565b42b0/" target="_blank" class="social-icon">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                    <a href="https://twitter.com/PinterestUTD" target="_blank" class="social-icon">
-                                        <i class="fab fa-x-twitter"></i>
-                                    </a>
-                                    <a href="https://wa.me/254707868194" target="_blank" class="social-icon">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                </div>
-                                <button class="button">Contact Me</button>
-                            </div>
+                            <span class="name">Evans Osumba</span>
+                            <span class="about-me">Software Developer | Web Enthusiast</span>
                         </div>
                     </div>
                 </div>
@@ -88,272 +63,269 @@
         </div>
     </section>
 
-    <section id="about" class="about_me">
-        <!-- <div class="about-image">
-            <img class="office_img animate-slideIn" src="about" alt="Developer workspace"> -->
-        </div>
-        <div class="about_text">
-            <h2>About Me</h2>
-            <p class="about_p">
-                I am a passionate Full Stack Developer based in Nairobi, Kenya, specializing in building 
-                robust and scalable web applications. Currently pursuing Communication and Computer 
-                Networks at The Technical University of Kenya.
-            </p>
-            <p class="about_p">
-                <br>My expertise lies in the Front End, with 
-                a particular focus on mastering front-end technologies like React.js, HTML5, CSS3, 
-                and JavaScript ES6+. I have a keen eye for design and a deep understanding of 
-                modern web technologies, enabling me to bridge the gap between technical 
-                functionality and user-centered design.            
-            </p>
-        
-            <p class="about_p">
-                <br>I am highly proficient in building scalable, high-performance web applications 
-               and continuously expand my knowledge to embrace emerging tools and frameworks. 
-               Whether it’s optimizing performance, crafting reusable components, or ensuring                
-               cross-browser compatibility, I am dedicated to delivering solutions that align 
-               with the latest industry standards.
-            </p>
-            <p class="about_p">
-                <br>With a commitment to learning, innovation, and adaptability, I strive to 
-                contribute to impactful projects and stay at the forefront of web development trends.
-            </p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="software-engineer-1800x1347.jpg" alt="About Image">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>
+                        I am a passionate Full Stack Developer based in Nairobi, Kenya, specializing in building 
+                        robust and scalable web applications.<br><br>
+
+                        My expertise lies in the Front End, with a particular focus on mastering front-end 
+                        technologies like React.js, HTML5, CSS3, and JavaScript. I have a keen eye for 
+                        design and a deep understanding of modern web technologies, enabling me to bridge the
+                        gap between technical functionality and user-centered design.<br><br>
+
+
+                        I am highly proficient in building scalable, high-performance web applications and 
+                        continuously expand my knowledge to embrace emerging tools and frameworks. <br><br>
+
+
+                        With a commitment to learning, innovation, and adaptability, I strive to contribute to 
+                        impactful projects and stay at the forefront of web development trends.
+                        </p>
+                    <!-- <div class="skills">
+                        <div class="skill-name">
+                            <p>Web Development</p><p>85%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+
+                        <div class="skill-name">
+                            <p>IoT and Cyber Security</p><p>95%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 95%;"></div>
+                        </div>
+
+                        <div class="skill-name">
+                            <p>Java Programing</p><p>90%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%;"></div>
+                        </div>
+
+                        <div class="skill-name">
+                            <p>Database Management</p><p>85%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%;"></div>
+                        </div>
+
+                        <div class="skill-name">
+                            <p>Mobile Development</p><p>15%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 15%;"></div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
         </div>
     </section>
 
-    <section id="skills" class="skillz">
-        <h2 class="skills-title">My Skills</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
         <div class="skills-container">
             <div class="skill-card">
-                <div class="align">
-                    <span class="red"></span>
-                    <span class="yellow"></span>
-                    <span class="green"></span>
-                </div>
+                <i class="fab fa-html5"></i>
                 <h3>HTML5 & CSS3</h3>
-                <p>
-                    Modern web development with semantic HTML5 and advanced CSS3 features including Flexbox, Grid, and Animations.
-                </p>
+                <p>Modern web development with semantic HTML5 and advanced CSS3 features.</p>
             </div>
-
             <div class="skill-card">
-                <div class="align">
-                    <span class="red"></span>
-                    <span class="yellow"></span>
-                    <span class="green"></span>
-                </div>
+                <i class="fab fa-js"></i>
                 <h3>JavaScript</h3>
-                <p>
-                    ES6+, DOM manipulation, Async/Await, and modern JavaScript frameworks.
-                </p>
+                <p>DOM manipulation, Async/Await, and modern JavaScript frameworks.</p>
             </div>
-
             <div class="skill-card">
-                <div class="align">
-                    <span class="red"></span>
-                    <span class="yellow"></span>
-                    <span class="green"></span>
-                </div>
-                <h3>MySQL</h3>
-                <p>
-                    Database design, querying, stored procedures, and optimization techniques.
-                </p>
-            </div>
-
-            <div class="skill-card">
-                <div class="align">
-                    <span class="red"></span>
-                    <span class="yellow"></span>
-                    <span class="green"></span>
-                </div>
-                <h3>Java</h3>
-                <p>
-                    OOP principles, Spring Framework, multithreading, and JVM-based application development.
-                </p>
-            </div>
-
-            <div class="skill-card">
-                <div class="align">
-                    <span class="red"></span>
-                    <span class="yellow"></span>
-                    <span class="green"></span>
-                </div>
+                <i class="fab fa-python"></i>
                 <h3>Python</h3>
-                <p>
-                    NoSQL database design, CRUD operations, and Mongoose ODM.
-                </p>
+                <p>Building scalable applications with Python and Django.</p>
             </div>
-
             <div class="skill-card">
-                <div class="align">
-                    <span class="red"></span>
-                    <span class="yellow"></span>
-                    <span class="green"></span>
-                </div>
-                <h3>Git & GitHub</h3>
-                <p>
-                    Version control, branching strategies, and collaborative development.
-                </p>
+                <i class="fas fa-database"></i>
+                <h3>Database Management</h3>
+                <p>Database design, querying, and optimization techniques with MySQL</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-android"></i>
+                <h3>Android Development</h3>
+                <p>Building Mobile Applications with Java.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>SEO</h3>
+                <p>Search engine optimisation using Google Ads and related platforms</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-java"></i>
+                <h3>SEO</h3>
+                <p>Web development, GUI Applications, Console Programming with Java</p>
             </div>
         </div>
     </section>
 
-    <div class="education_out">
-        <h2 class="ability_text" style="font-size:xx-large;">Education</h2>
-        <div class="education">
-            <img class="edu_img" src="istockphoto-1205507976-612x612.jpg">
-            <p class="ability_text">Bachelor Of Technology Communication And Computer Networks<br>
-                2023-2027<br>
-                Still pursuing
-            </p>
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <h2>Education</h2>
+        <div class="education-container">
+            <div class="education-item">
+                <img src="edu1.jpg" alt="Education">
+                <p>Bachelor of Technology in Communication and Computer Networks<br>2023-2027</p>
+            </div>
+            <div class="education-item">
+                <img src="edu2.jpg" alt="Education">
+                <p>Advanced Diploma in Software Engineering<br>2023-2025</p>
+            </div>
         </div>
-
-        <div class="education">
-            <img class="edu_img" src="istockphoto-1205507976-612x612.jpg">
-            <p class="ability_text">Advanced Diploma in Software Engineering<br>
-                2023-2025<br>
-                Still pursuing
-            </p>
-        </div>
-
-        <div class="education">
-            <img class="edu_img" src="istockphoto-1205507976-612x612.jpg">
-            <p class="ability_text">Certificate in ICDL<br>
-                2023<br>
-                Completed.
-            </p>
-        </div>
-
-        <div class="education">
-            <img class="edu_img" src="istockphoto-1205507976-612x612.jpg">
-            <p class="ability_text">Kenya Certificate of Secondary Education<br>
-                2019-2022<br>
-                Completed.
-            </p>
-        </div>
-    </div>
-
-    <section id="contact" class="contact">
-        <div class="contact_in">
-            <img class="contact_us" src="Get-in-Touch2.jpg">
-            <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
-                <h2 class="ability_text" style="font-size:x-large;color: blue;"><b>Get in touch</b></h2>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>   
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                    <section id="about" class="about">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" required></textarea>
-                        
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
-                             
-                                    <!-- <button class="button">Contact Me</button> -->
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-             
-                
-             
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="evans2.jpeg" alt="Project 1">
+                <div class="project-text">
+                    <h3>Project 1</h3>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="unnamed.jpg" alt="Project 2">
+                <div class="project-text">
+                    <h3>Project 2</h3>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="unnamed.jpg" alt="Project 3">
+                <div class="project-text">
+                    <h3>Project 3</h3>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="unnamed.jpg" alt="Project 3">
+                <div class="project-text">
+                    <h3>Project 4</h3>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="unnamed.jpg" alt="Project 3">
+                <div class="project-text">
+                    <h3>Project 5</h3>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="unnamed.jpg" alt="Project 3">
+                <div class="project-text">
+                    <h3>Project 6</h3>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="prevProject()">&#10094;</button>
+        <button class="next" onclick="nextProject()">&#10095;</button>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <h2>Working Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-text">
+                    <div class="timeline-date">2023 - Present</div>
+                    <h3>Web Developer</h3>
+                    <h4>Soft Agency, Nairobi, Kenya</h4>
+                    <p>Developed and maintained web applications using modern technologies.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-text">
+                    <div class="timeline-date">2021 - 2023</div>
+                    <h3>Freelance Developer</h3>
+                    <h4>Self-Employed</h4>
+                    <p>Worked on various projects, including e-commerce sites and personal blogs.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-text">
+                    <div class="timeline-date">2023 - Present</div>
+                    <h3>Web Developer</h3>
+                    <h4>Soft Agency, Nairobi, Kenya</h4>
+                    <p>Developed and maintained web applications using modern technologies.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-text">
+                    <div class="timeline-date">2021 - 2023</div>
+                    <h3>Freelance Developer</h3>
+                    <h4>Self-Employed</h4>
+                    <p>Worked on various projects, including e-commerce sites and personal blogs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Services</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <i class="fa fa-laptop"></i>
+                <h3>Web Design</h3>
+                <p>Creating visually appealing and user-friendly websites.</p>
+            </div>
+            <div class="service-item">
+                <i class="fa fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>Building robust and scalable web applications.</p>
+            </div>
+            <div class="service-item">
+                <i class="fab fa-android"></i>
+                <h3>Apps Design</h3>
+                <p>Designing intuitive and engaging mobile applications.</p>
+            </div>
+            <div class="service-item">
+                <i class="fab fa-apple"></i>
+                <h3>Apps Development</h3>
+                <p>Developing high-performance mobile applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <p class="copyright"> All Rights Reserved | Terms of Use | Privacy and Cookie policy | 2024</p>
+        <p>&copy; 2024 Evans Osumba. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            const navList = document.querySelector('.nav-list');
-            navList.classList.toggle('active');
-        }
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const navList = document.querySelector('.nav-list');
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            
-            if (!navList.contains(e.target) && !mobileMenuToggle.contains(e.target) && navList.classList.contains('active')) {
-                navList.classList.remove('active');
-            }
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-list a').forEach(link => {
-            link.addEventListener('click', () => {
-                const navList = document.querySelector('.nav-list');
-                navList.classList.remove('active');
-            });
-        });
-
-        // Smooth scroll to sections
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const section = document.querySelector(this.getAttribute('href'));
-                if (section) {
-                    section.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Navbar hide/show on scroll
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const navbar = document.querySelector('.navbar');
-            
-            if (scrollTop > lastScrollTop) {
-                navbar.style.top = '-100px';
-            } else {
-                navbar.style.top = '0';
-            }
-            lastScrollTop = scrollTop;
-        });
-
-        async function submitForm(event) {
-            event.preventDefault();
-            
-            const form = document.getElementById('contactForm');
-            const formData = new URLSearchParams(new FormData(form));
-            
-            // Try ports 8000-8009
-            for (let port = 8000; port < 8010; port++) {
-                try {
-                    const response = await fetch(`http://localhost:${port}/api/submit`, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'
-                        }
-                    });
-
-                    const result = await response.json();
-                    
-                    if (result.success) {
-                        alert('Message sent successfully!');
-                        form.reset();
-                        return;
-                    } else {
-                        alert(result.message || 'Failed to send message. Please try again.');
-                        return;
-                    }
-                } catch (error) {
-                    if (port === 8009) {
-                        console.error('Error:', error);
-                        alert('Failed to connect to server. Please make sure the server is running and try again.');
-                    }
-                    // Continue trying next port
-                    continue;
-                }
-            }
-        }
-    </script>
 </body>
 </html>
 
 
+
+
+<!-- <p class="subtitle" id="subtitle1">Turning ideas into reality through code</p>
+<p class="subtitle" id="subtitle2">Get to feel the taste of technology</p>
+<p class="subtitle" id="subtitle3">Building Transformations for the future</p> -->
