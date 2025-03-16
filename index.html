@@ -36,16 +36,15 @@
                     <span id="highlight" class="highlight"></span>
                 </p>
                 <p class="subtitle" id="subtitle1"></p>
-                <p class="subtitle" id="subtitle2"></p>
-                <p class="subtitle" id="subtitle3"></p>
+              
                
                 <div class="social-links">
                     <a href="https://github.com/galaxie-dev" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/evans-osumba-0565b42b0/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://twitter.com/OsumbaKe" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://wa.me/254793033363" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://twitter.com/Osumba_ke" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://wa.me/254707868194" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
-                <a href="#contact"><button class="hire-me">Hire Me</button></a>
+                <!-- <a href="#contact"><button class="hire-me">Hire Me</button></a> -->
             </div>
             <div class="profile-container">
                 <div class="profile-wrapper">
@@ -298,13 +297,13 @@
     <h2>Projects</h2>
     <div class="projects-container">
         <div class="projects-wrapper">
-            <div class="project-card">
+            <!-- <div class="project-card">
                 <img src="evans2.jpeg" alt="Project 1">
                 <div class="project-text">
                     <h4>Project 1</h4><br>
                     <a href="#" target="_blank">View Web Page</a>
                 </div>
-            </div>
+            </div> -->
             <div class="project-card">
                 <img src="digital-leap.png" alt="Project 2">
                 <div class="project-text">
@@ -749,8 +748,19 @@
 </body>
 <script>
     function openGmailCompose() {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const email = "osumbaevans21@gmail.com";
+    const subject = "Booking an Appointment";
+
+    if (isMobile) {
+        // Open Gmail app on mobile
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+    } else {
+        // Open Gmail web interface on desktop
         window.open('https://mail.google.com/mail/?view=cm&fs=1&to=osumbaevans21@gmail.com&su=Booking%20an%20Appointment', '_blank');
     }
+}
+
 
     document.querySelectorAll('.accordion-header').forEach(header => {
         header.addEventListener('click', () => {
