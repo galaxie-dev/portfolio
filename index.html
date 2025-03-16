@@ -31,8 +31,8 @@
         <div class="intro-content">
             <div class="intro-text animate-fadeIn">
                 <p class="first_text">
+                    <br><br>
                     <span id="greeting">Turn Your Ideas into Reality Through Code</span><br>
-                    <!-- <span id="name">I'm Evans Osumba</span><br> -->
                     <span id="highlight" class="highlight"></span>
                 </p>
                 <p class="subtitle" id="subtitle1"></p>
@@ -45,7 +45,7 @@
                     <a href="https://twitter.com/OsumbaKe" target="_blank"><i class="fab fa-x-twitter"></i></a>
                     <a href="https://wa.me/254793033363" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
-                <button class="hire-me">Hire Me</button>
+                <a href="#contact"><button class="hire-me">Hire Me</button></a>
             </div>
             <div class="profile-container">
                 <div class="profile-wrapper">
@@ -54,8 +54,8 @@
                             <img src="evans2.jpeg" alt="Evans Osumba">
                         </div>
                         <div class="bottom">
-                            <span class="name">Evans Osumba</span>
-                            <span class="about-me">Software Developer | Web Enthusiast</span>
+                            <span class="name">Evans Osumba</span> <br>
+                            <span class="about-me">Software Developer</span>
                         </div>
                     </div>
                 </div>
@@ -94,47 +94,108 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="skills">
         <h2>My Skills</h2>
-        <div class="skills-container">
-            <div class="skill-card">
-                <i class="fab fa-html5"></i>
-                <h3>HTML5 & CSS3</h3>
-                <p>Modern web development with semantic HTML5 and advanced CSS3 features.</p>
+        <div class="skills-accordion">
+            <!-- Programming Skills -->
+            <div class="accordion-item">
+                <div class="accordion-header" style="color: black;">
+                    <i class="fas fa-code" style="color: black;"></i>
+                    <h3 style="color: black;">Programming Skills</h3>
+                    <i class="fas fa-chevron-down accordion-toggle"></i>
+                </div>
+                <div class="accordion-content">
+                    <div class="skill-card"><i class="fab fa-python"></i><p>Python: Scalable apps & automation</p></div>
+                    <div class="skill-card"><i class="fab fa-java"></i><p>Java: Web, Android & enterprise dev</p></div>
+                    <div class="skill-card"><i class="fas fa-code"></i><p>C & C++: Efficient system programming</p></div>
+                    <div class="skill-card"><i class="fab fa-cuttlefish"></i><p>C#: Desktop & enterprise solutions</p></div>
+                    <div class="skill-card"><i class="fab fa-js"></i><p>JavaScript: Dynamic web interactivity</p></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fab fa-js"></i>
-                <h3>JavaScript</h3>
-                <p>DOM manipulation, Async/Await, and modern JavaScript frameworks.</p>
+    
+            <!-- Web Development Skills -->
+            <div class="accordion-item">
+                <div class="accordion-header" style="color: black;">
+                    <i class="fab fa-html5" style="color: black;"></i>
+                    <h3 style="color: black;">Web Development Skills</h3>
+                    <i class="fas fa-chevron-down accordion-toggle"></i>
+                </div>
+                <div class="accordion-content">
+                    <div class="skill-card"><i class="fab fa-html5"></i><p>HTML5 & CSS3: Modern responsive websites</p></div>
+                    <div class="skill-card"><i class="fas fa-paint-brush"></i><p>UI/UX: User-friendly, responsive design, cross-device compatibility.</p></div>
+                    <div class="skill-card"><i class="fas fa-search"></i><p>SEO: Boosting web visibility</p></div>
+                    <div class="skill-card"><i class="fas fa-laptop-code"></i><p>Web & Enterprise Apps: Scalable Web apps</p></div>
+                    <div class="skill-card"><i class="fas fa-tasks"></i><p>Agile System Developmet: Iterative software management</p></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fab fa-python"></i>
-                <h3>Python</h3>
-                <p>Building scalable applications with Python and Django.</p>
+    
+            <!-- Mobile Development Skills -->
+            <div class="accordion-item">
+                <div class="accordion-header" style="color: black;">
+                    <i class="fab fa-android" style="color: black;"></i>
+                    <h3 style="color: black;">Mobile Development</h3>
+                    <i class="fas fa-chevron-down accordion-toggle"></i>
+                </div>
+                <div class="accordion-content">
+                    <div class="skill-card"><i class="fab fa-android"></i><p>Android Development: Java-based mobile apps</p></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <h3>Database Management</h3>
-                <p>Database design, querying, and optimization techniques with MySQL</p>
+    
+            <!-- Database Skills -->
+            <div class="accordion-item">
+                <div class="accordion-header" style="color: black;">
+                    <i class="fas fa-database" style="color: black;"></i>
+                    <h3 style="color: black;">Database</h3>
+                    <i class="fas fa-chevron-down accordion-toggle"></i>
+                </div>
+                <div class="accordion-content">
+                    <div class="skill-card"><i class="fas fa-database"></i><p>SQL: Database design & management</p></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-android"></i>
-                <h3>Android Development</h3>
-                <p>Building Mobile Applications with Java.</p>
+    
+            <!-- Networking Skills -->
+            <div class="accordion-item">
+                <div class="accordion-header" style="color: black;">
+                    <i class="fas fa-network-wired"></i>
+                    <h3 style="color: black;">Networking</h3>
+                    <i class="fas fa-chevron-down accordion-toggle"></i>
+                </div>
+                <div class="accordion-content">
+                    <div class="skill-card"><i class="fas fa-network-wired"></i><p>Network Architecture: Planning and implementing network infrastructure</p></div>
+                    <div class="skill-card"><i class="fas fa-cloud"></i><p>Cloud Computing: Deploying and managing web applications</p></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>SEO</h3>
-                <p>Search engine optimisation using Google Ads and related platforms</p>
+    
+            <!-- Cybersecurity Skills -->
+            <div class="accordion-item">
+                <div class="accordion-header" style="color: black;" >
+                    <i class="fas fa-shield-alt" style="color: black;"></i>
+                    <h3 style="color: black;">Cybersecurity</h3>
+                    <i class="fas fa-chevron-down accordion-toggle"></i>
+                </div>
+                <div class="accordion-content">
+                    <div class="skill-card"><i class="fas fa-shield-alt"></i><p>Cybersecurity: Basic system protection</p></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-java"></i>
-                <h3>SEO</h3>
-                <p>Web development, GUI Applications, Console Programming with Java</p>
+    
+            <!-- Digital Productivity Skills -->
+            <div class="accordion-item">
+                <div class="accordion-header" style="color: black;">
+                    <i class="fas fa-desktop" style="color: black;"></i>
+                    <h3 style="color: black;">Digital Productivity</h3>
+                    <i class="fas fa-chevron-down accordion-toggle"></i>
+                </div>
+                <div class="accordion-content">
+                    <div class="skill-card"><i class="fas fa-desktop"></i><p>Computer Essentials: Core skills & online collaboration tools</p></div>
+                    <div class="skill-card"><i class="fas fa-table"></i><p>Spreadsheets: Data analysis</p></div>
+                    <div class="skill-card"><i class="fas fa-file-word"></i><p>Word Document: Professional docs</p></div>
+                    <div class="skill-card"><i class="fas fa-chalkboard-teacher"></i><p>Presentation: Engaging & visually appealing slides</p></div>                    
+                </div>
             </div>
         </div>
     </section>
+
+
 
 <!-- Education Section -->
 <section id="education" class="education">
@@ -168,7 +229,7 @@
                     <img src="edu1.png" alt="Education" class="edu-logo">
                     <h4 style="color: #00ff88;">Advanced Diploma in Software Engineering</h4><br>
                     <p>Edulink International College</p>
-                    <h5>2023-2025</h5>
+                    <h5>2024-2025</h5>
                     <p>In Session</p>
                 </div>
                 <div class="education-back card-back">
@@ -274,86 +335,433 @@
 
     <!-- Experience Section -->
     <section id="experience" class="experience">
-        <h2>Working Experience</h2>
+        <h2>Experience</h2>
         <div class="timeline">
+            <!-- Timeline Line -->
+            <div class="timeline-line"></div>
+    
+            <!-- Timeline Items -->
             <div class="timeline-item left">
-                <div class="timeline-text">
-                    <div class="timeline-date">2023 - Present</div>
-                    <h3>Web Developer</h3>
-                    <h4>Soft Agency, Nairobi, Kenya</h4>
-                    <p>Developed and maintained web applications using modern technologies.</p>
+                <div class="timeline-card">
+                    <div class="timeline-text">
+                        <div class="timeline-date">2025 - Present</div>
+                        <h3>Tutoring - Web Development</h3>
+                        <a href="https://leafoundation.co.ke/" target="_blank"><h4>LEA Foundation</h4></a>
+                        <p>Voluntary Tutoring Students in Web Development at Mukuru Slums Development Project</p>
+                    </div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
                 </div>
             </div>
             <div class="timeline-item right">
-                <div class="timeline-text">
-                    <div class="timeline-date">2021 - 2023</div>
-                    <h3>Freelance Developer</h3>
-                    <h4>Self-Employed</h4>
-                    <p>Worked on various projects, including e-commerce sites and personal blogs.</p>
+                <div class="timeline-card">
+                    <div class="timeline-text">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h3>Junior Web Manager</h3>
+                        <a href="https://houzme.africa/" target="_blank"><h4>Houzme Africa</h4></a>
+                        <p>Updating and posting properties on the site.<br>Ensure emails are attended to and responded to in time</p>
+                    </div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
                 </div>
             </div>
             <div class="timeline-item left">
-                <div class="timeline-text">
-                    <div class="timeline-date">2023 - Present</div>
-                    <h3>Web Developer</h3>
-                    <h4>Soft Agency, Nairobi, Kenya</h4>
-                    <p>Developed and maintained web applications using modern technologies.</p>
+                <div class="timeline-card">
+                    <div class="timeline-text">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h3>Social Media Management</h3>
+                        <h4>KUSO - Kenya</h4>
+                        <p>Managing the social media accounts for KUSO-Kenya, (X) Twitter and Facebook.</p>
+                    </div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
                 </div>
             </div>
             <div class="timeline-item right">
-                <div class="timeline-text">
-                    <div class="timeline-date">2021 - 2023</div>
-                    <h3>Freelance Developer</h3>
-                    <h4>Self-Employed</h4>
-                    <p>Worked on various projects, including e-commerce sites and personal blogs.</p>
+                <div class="timeline-card">
+                    <div class="timeline-text">
+                        <div class="timeline-date">2023 - Present</div>
+                        <h3>Freelance</h3>
+                        <h4>Self-Employed</h4>
+                        <p>Working on personal projects and Client Projects (websites)</p>
+                    </div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
-        <h2>Services</h2>
-        <div class="services-container">
-            <div class="service-item">
-                <i class="fa fa-laptop"></i>
-                <h3>Web Design</h3>
-                <p>Creating visually appealing and user-friendly websites.</p>
-            </div>
-            <div class="service-item">
-                <i class="fa fa-laptop-code"></i>
-                <h3>Web Development</h3>
-                <p>Building robust and scalable web applications.</p>
-            </div>
-            <div class="service-item">
-                <i class="fab fa-android"></i>
-                <h3>Apps Design</h3>
-                <p>Designing intuitive and engaging mobile applications.</p>
-            </div>
-            <div class="service-item">
-                <i class="fab fa-apple"></i>
-                <h3>Apps Development</h3>
-                <p>Developing high-performance mobile applications.</p>
+
+    <!-- Services Section -->
+<!-- Services Section -->
+<section id="services" class="services">
+    <p><h2>Services </h2><span>Get to feel the taste of technology</span></p>
+    <div class="services-container">
+        <div class="service-card">
+            <div class="service-card-inner">
+                <div class="service-card-overlay"></div>
+                <div class="service-card-blur-top"></div>
+                <div class="service-card-blur-bottom"></div>
+                <div class="service-card-popular">
+                    <div class="popular-gradient"></div>
+                    <div class="popular-mask"></div>
+                    <div class="popular-line"></div>
+                    <span class="popular-label">POPULAR</span>
+                </div>
+                <div class="service-content">
+                    <p class="service-title">Web Development Services</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Web Development</p>
+                                <p class="feature-desc">Responsive sites with HTML5, CSS3, JS.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">UI/UX Design</p>
+                                <p class="feature-desc">User-friendly web interfaces.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Custom Web Software</p>
+                                <p class="feature-desc">Tailored solutions in Python, Java.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Enterprise Apps</p>
+                                <p class="feature-desc">Scalable web apps with Agile.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="service-btn">
+                        <a href="#" onclick="openGmailCompose(); return false;" class="service-btn">
+                            <span class="btn-text">Book Appointment <i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </button>
+                </div>
             </div>
         </div>
-    </section>
+
+        <div class="service-card">
+            <div class="service-card-inner">
+                <div class="service-card-overlay"></div>
+                <div class="service-card-blur-top"></div>
+                <div class="service-card-blur-bottom"></div>
+                <div class="service-content">
+                    <p class="service-title">Digital Productivity Solutions</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Spreadsheet Automation</p>
+                                <p class="feature-desc">Excel tools for analysis.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Document Management</p>
+                                <p class="feature-desc">Pro document formatting.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Presentation Design</p>
+                                <p class="feature-desc">Visually appealing slides.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Collaboration Setup</p>
+                                <p class="feature-desc">Optimize remote tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="service-btn">
+                        <a href="#" onclick="openGmailCompose(); return false;" class="service-btn">
+                            <span class="btn-text">Book Appointment <i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-card-inner">
+                <div class="service-card-overlay"></div>
+                <div class="service-card-blur-top"></div>
+                <div class="service-card-blur-bottom"></div>
+                <div class="service-content">
+                    <p class="service-title">Web & Marketing Services</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">SEO</p>
+                                <p class="feature-desc">Improve search visibility.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Web Components</p>
+                                <p class="feature-desc">Dynamic website elements.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">CMS Development</p>
+                                <p class="feature-desc">Easy content platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="service-btn">
+                        <a href="#" onclick="openGmailCompose(); return false;" class="service-btn">
+                            <span class="btn-text">Book Appointment <i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-card-inner">
+                <div class="service-card-overlay"></div>
+                <div class="service-card-blur-top"></div>
+                <div class="service-card-blur-bottom"></div>
+                <div class="service-card-popular">
+                    <div class="popular-gradient"></div>
+                    <div class="popular-mask"></div>
+                    <div class="popular-line"></div>
+                    <span class="popular-label">POPULAR</span>
+                </div>
+                <div class="service-content">
+                    <p class="service-title">Educational & Training Services</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Programming Tutoring</p>
+                                <p class="feature-desc">Teach Python, Java, C++, C#, JS.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Computer Essentials</p>
+                                <p class="feature-desc">Basics, Excel, presentations (ICDL).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="service-btn">
+                        <a href="#" onclick="openGmailCompose(); return false;" class="service-btn">
+                            <span class="btn-text">Book Appointment <i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-card-inner">
+                <div class="service-card-overlay"></div>
+                <div class="service-card-blur-top"></div>
+                <div class="service-card-blur-bottom"></div>
+                <div class="service-card-popular">
+                    <div class="popular-gradient"></div>
+                    <div class="popular-mask"></div>
+                    <div class="popular-line"></div>
+                    <span class="popular-label">POPULAR</span>
+                </div>
+                <div class="service-content">
+                    <p class="service-title">Consulting & Optimization</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Agile Management</p>
+                                <p class="feature-desc">Guide Agile practices.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">System Optimization</p>
+                                <p class="feature-desc">Enhance system efficiency.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Responsive Design</p>
+                                <p class="feature-desc">Cross-device compatibility.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="service-btn">
+                        <a href="#" onclick="openGmailCompose(); return false;" class="service-btn">
+                            <span class="btn-text">Book Appointment <i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-card-inner">
+                <div class="service-card-overlay"></div>
+                <div class="service-card-blur-top"></div>
+                <div class="service-card-blur-bottom"></div>
+                <div class="service-card-popular">
+                    <div class="popular-gradient"></div>
+                    <div class="popular-mask"></div>
+                    <div class="popular-line"></div>
+                    <span class="popular-label">POPULAR</span>
+                </div>
+                <div class="service-content">
+                    <p class="service-title">Android Development Services</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Android Apps</p>
+                                <p class="feature-desc">Develop Android mobile apps.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Custom Android Software</p>
+                                <p class="feature-desc">Specialized solutions with Java.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="service-btn">
+                        <a href="#" onclick="openGmailCompose(); return false;" class="service-btn">
+                            <span class="btn-text">Book Appointment <i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-card-inner">
+                <div class="service-card-overlay"></div>
+                <div class="service-card-blur-top"></div>
+                <div class="service-card-blur-bottom"></div>
+                <div class="service-content">
+                    <p class="service-title">Database Management</p>
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Database Services</p>
+                                <p class="feature-desc">Design and manage with SQL.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa fa-check"></i></div>
+                            <div>
+                                <p class="feature-title">Back End Development</p>
+                                <p class="feature-desc">Implementing SQL Databases with PHP</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="service-btn">
+                        <a href="#" onclick="openGmailCompose(); return false;" class="service-btn">
+                            <span class="btn-text">Book Appointment <i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
+        <form class="contact-form" id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="subject" placeholder="Subject" required>
+            <input type="text" id="phone" placeholder="Your Phone No" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 | Evans Osumba | All Rights Reserved.</p>
+        <div class="footer-content">
+          
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home" class="link-item">Home</a>
+                <a href="#services" class="link-item">Services</a>
+                <a href="#projects" class="link-item">Projects</a>
+                <a href="#contact" class="link-item">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Socials</h3>
+                <a href="https://twitter.com/Osumba_ke" target="_blank" class="contact-item">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="https://www.linkedin.com/in/evans-osumba-0565b42b0/" target="_blank" class="contact-item">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://wa.me/254707868194" target="_blank" class="contact-item">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://github.com/galaxie-dev" target="_blank" class="contact-item">
+                    <i class="fab fa-github"></i> GitHub
+                <a href="mailto:osumbaevans21@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i> osumbaevans21@gmail.com
+                </a>
+                <span class="contact-item">
+                    <i class="fas fa-phone"></i> +254 123 456 789
+                </span>
+                <span class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> Nairobi, Kenya
+                </span>
+            </div>
+        </div>
+        <p class="footer-copyright">© 2025 | Terms and Conditions | All Rights Reserved.</p>
     </footer>
 </body>
+<script>
+    function openGmailCompose() {
+        window.open('https://mail.google.com/mail/?view=cm&fs=1&to=osumbaevans21@gmail.com&su=Booking%20an%20Appointment', '_blank');
+    }
+
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.accordion-toggle');
+            
+            content.classList.toggle('active');
+            toggle.classList.toggle('active');
+        });
+    });
+    </script>
 </html>
 
 
