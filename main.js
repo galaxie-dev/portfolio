@@ -158,102 +158,129 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form Submission
-const contactForm = document.querySelector('.contact-form');
+const contactForm = document.getElementById('contact-form');
+
 contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    alert('Message sent successfully!');
-    contactForm.reset();
+
+    // Get form values
+    const name = document.getElementById('name').value;
+    const subject = document.getElementById('subject').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+
+    // Construct email body with Name and Phone at the top
+    const emailBody = `Name: ${name}\nPhone: ${phone}\n\n${message}`;
+
+    // Gmail compose URL
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=osumbaevans21@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+    // Open Gmail compose in a new tab
+    window.open(gmailUrl, '_blank');
+
+    // Show success message and reset form
+    setTimeout(() => {
+        alert('Email prepared! Please click "Send" in Gmail.');
+        contactForm.reset();
+    }, 500); // Delay to ensure Gmail opens first
 });
 
 
-
-// Function to type and erase text letter by letter
-function typeEraseText(element, text, delay = 100, eraseDelay = 3000) {
+// Function to type and erase text letter by letter (for highlight text)
+function typeEraseHighlight() {
+    const highlight = document.getElementById("highlight");
+    const text = "Evans Osumba | Software Developer";
     let index = 0;
     let isErasing = false;
 
     function type() {
         if (index < text.length && !isErasing) {
-            element.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, delay);
-        } else if (index === text.length && !isErasing) {
-            isErasing = true;
-            setTimeout(type, eraseDelay);
-        } else if (isErasing && index > 0) {
-            element.textContent = text.substring(0, index - 1);
-            index--;
-            setTimeout(type, delay / 2);
-        } else {
-            isErasing = false;
-            setTimeout(type, delay);
-        }
-    }
-
-    type();
-}
-
-// Function to cycle through subtitles
-    function cycleSubtitles() {
-        const subtitles = [
-            document.getElementById("subtitle1"),
-            document.getElementById("subtitle2"),
-            document.getElementById("subtitle3"),
-        ];
-
-        let currentIndex = 0;
-
-        function showNextSubtitle() {
-            subtitles.forEach((subtitle, i) => {
-                subtitle.style.opacity = i === currentIndex ? 1 : 0;
-                subtitle.textContent = ""; // Clear text before typing
-                if (i === currentIndex) {
-                    typeEraseText(subtitle, subtitles[currentIndex].dataset.text);
-                }
-            });
-
-            currentIndex = (currentIndex + 1) % subtitles.length;
-            setTimeout(showNextSubtitle, 10000); // 10 seconds per subtitle (7s typing + 3s pause)
-        }
-
-        // Set initial text data for subtitles
-        subtitles[0].dataset.text = "Get to feel the taste of technology";
-        subtitles[2].dataset.text = "Building Transformations for the future";
-
-        showNextSubtitle();
-    }
-
-// Function to type the "Software Developer" text
-function typeHighlight() {
-    const highlight = document.getElementById("highlight");
-    const text = "Evans Osumba | Software Developer";
-    let index = 0;
-
-    function type() {
-        if (index < text.length) {
             highlight.textContent += text.charAt(index);
             index++;
             setTimeout(type, 100); // Typing speed
-        } else {
-            setTimeout(erase, 7000); // Wait 7 seconds before erasing
+        } else if (index === text.length && !isErasing) {
+            isErasing = true;
+            setTimeout(erase, 5000); // Wait 5 seconds before erasing
         }
     }
 
     function erase() {
-        if (index > 0) {
+        if (index > 1) { // Stop erasing at the first letter
             highlight.textContent = text.substring(0, index - 1);
             index--;
             setTimeout(erase, 50); // Erasing speed
         } else {
-            setTimeout(type, 1000); // Wait 1 second before retyping
+            isErasing = false;
+            setTimeout(type, 100); // Wait 1 second before retyping
         }
     }
 
     type();
 }
 
-// Initialize animations on page load
-window.onload = function () {
-    typeHighlight();
-    cycleSubtitles();
-};
+
+
+function cycleSubtitles() {
+    const subtitle = document.getElementById("subtitle1"); // Only one subtitle
+    const text = "Building Transformations for the future";
+
+    function typeEraseSubtitle() {
+        let index = 0;
+        let isErasing = false;
+
+        function type() {
+            if (index < text.length && !isErasing) {
+                subtitle.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 100); // Typing speed
+            } else if (index === text.length && !isErasing) {
+                isErasing = true;
+                setTimeout(erase, 5000); // Wait 5 seconds before erasing
+            }
+        }
+
+        function erase() {
+            if (index > 1) { // Stop erasing at the first letter
+                subtitle.textContent = text.substring(0, index - 1);
+                index--;
+                setTimeout(erase, 50); // Erasing speed
+            } else {
+                isErasing = false;
+                setTimeout(type, 100); // Wait 1 second before retyping
+            }
+        }
+
+        type();
+    }
+
+    // Start the animation
+    typeEraseSubtitle();
+}
+
+// Initialize functions
+typeEraseHighlight();
+cycleSubtitles();
+
+
+
+//experience//
+document.addEventListener("DOMContentLoaded", function () {
+    const timelineItems = document.querySelectorAll(".timeline-item");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                } else {
+                    entry.target.classList.remove("active");
+                }
+            });
+        },
+        { threshold: 0.5 }
+    );
+
+    timelineItems.forEach((item) => {
+        observer.observe(item);
+    });
+});
