@@ -25,6 +25,11 @@ let currentProjectIndex = 0;
 const projectsWrapper = document.querySelector('.projects-wrapper');
 const projectCards = document.querySelectorAll('.project-card');
 const totalProjects = projectCards.length;
+let autoSwipeInterval = null;
+let isSwiping = false;
+let startX = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
 
 function updateProjects() {
     const cardWidth = projectCards[0].offsetWidth + 20; // Including gap
@@ -41,11 +46,100 @@ function prevProject() {
     updateProjects();
 }
 
-// Auto-Swipe Every 5 Seconds
-setInterval(nextProject, 5000);
+function startAutoSwipe() {
+    if (!autoSwipeInterval) {
+        autoSwipeInterval = setInterval(nextProject, 5000);
+    }
+}
 
-// Initial positioning
+function stopAutoSwipe() {
+    clearInterval(autoSwipeInterval);
+    autoSwipeInterval = null;
+    // Restart auto-swipe after 2 minutes (120000 ms)
+    setTimeout(startAutoSwipe, 120000);
+}
+
+// Swipe functionality
+projectsWrapper.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isSwiping = true;
+    stopAutoSwipe();
+    prevTranslate = currentTranslate;
+    projectsWrapper.style.transition = 'none';
+});
+
+projectsWrapper.addEventListener('touchmove', (e) => {
+    if (!isSwiping) return;
+    const currentX = e.touches[0].clientX;
+    const diffX = currentX - startX;
+    currentTranslate = prevTranslate + diffX;
+    projectsWrapper.style.transform = `translateX(${currentTranslate}px)`;
+});
+
+projectsWrapper.addEventListener('touchend', (e) => {
+    isSwiping = false;
+    projectsWrapper.style.transition = 'transform 0.6s ease-in-out';
+    const cardWidth = projectCards[0].offsetWidth + 20;
+    const threshold = cardWidth / 3; // Swipe threshold
+
+    if (Math.abs(currentTranslate - prevTranslate) > threshold) {
+        if (currentTranslate < prevTranslate) {
+            nextProject();
+        } else {
+            prevProject();
+        }
+    } else {
+        updateProjects(); // Snap back if swipe not far enough
+    }
+    currentTranslate = -currentProjectIndex * cardWidth;
+});
+
+// Mouse drag for desktop (optional)
+projectsWrapper.addEventListener('mousedown', (e) => {
+    startX = e.clientX;
+    isSwiping = true;
+    stopAutoSwipe();
+    prevTranslate = currentTranslate;
+    projectsWrapper.style.transition = 'none';
+});
+
+projectsWrapper.addEventListener('mousemove', (e) => {
+    if (!isSwiping) return;
+    const currentX = e.clientX;
+    const diffX = currentX - startX;
+    currentTranslate = prevTranslate + diffX;
+    projectsWrapper.style.transform = `translateX(${currentTranslate}px)`;
+});
+
+projectsWrapper.addEventListener('mouseup', (e) => {
+    isSwiping = false;
+    projectsWrapper.style.transition = 'transform 0.6s ease-in-out';
+    const cardWidth = projectCards[0].offsetWidth + 20;
+    const threshold = cardWidth / 3;
+
+    if (Math.abs(currentTranslate - prevTranslate) > threshold) {
+        if (currentTranslate < prevTranslate) {
+            nextProject();
+        } else {
+            prevProject();
+        }
+    } else {
+        updateProjects();
+    }
+    currentTranslate = -currentProjectIndex * cardWidth;
+});
+
+projectsWrapper.addEventListener('mouseleave', () => {
+    if (isSwiping) {
+        isSwiping = false;
+        projectsWrapper.style.transition = 'transform 0.6s ease-in-out';
+        updateProjects();
+    }
+});
+
+// Initial setup
 updateProjects();
+startAutoSwipe();
 
 // Update on window resize
 window.addEventListener('resize', updateProjects);
