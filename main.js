@@ -22,27 +22,33 @@ document.addEventListener('click', (e) => {
 
 // Auto-Swipe Projects
 let currentProjectIndex = 0;
-const projectsContainer = document.querySelector('.projects-container');
+const projectsWrapper = document.querySelector('.projects-wrapper');
 const projectCards = document.querySelectorAll('.project-card');
+const totalProjects = projectCards.length;
 
-function showProject(index) {
-    projectCards.forEach((card, i) => {
-        card.style.transform = `translateX(${100 * (i - index)}%)`;
-    });
+function updateProjects() {
+    const cardWidth = projectCards[0].offsetWidth + 20; // Including gap
+    projectsWrapper.style.transform = `translateX(-${currentProjectIndex * cardWidth}px)`;
 }
 
 function nextProject() {
-    currentProjectIndex = (currentProjectIndex + 1) % projectCards.length;
-    showProject(currentProjectIndex);
+    currentProjectIndex = (currentProjectIndex + 1) % totalProjects;
+    updateProjects();
 }
 
 function prevProject() {
-    currentProjectIndex = (currentProjectIndex - 1 + projectCards.length) % projectCards.length;
-    showProject(currentProjectIndex);
+    currentProjectIndex = (currentProjectIndex - 1 + totalProjects) % totalProjects;
+    updateProjects();
 }
 
 // Auto-Swipe Every 5 Seconds
 setInterval(nextProject, 5000);
+
+// Initial positioning
+updateProjects();
+
+// Update on window resize
+window.addEventListener('resize', updateProjects);
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -117,8 +123,7 @@ function typeEraseText(element, text, delay = 100, eraseDelay = 3000) {
         }
 
         // Set initial text data for subtitles
-        subtitles[0].dataset.text = "Turning ideas into reality through code";
-        // subtitles[1].dataset.text = "Get to feel the taste of technology";
+        subtitles[0].dataset.text = "Get to feel the taste of technology";
         subtitles[2].dataset.text = "Building Transformations for the future";
 
         showNextSubtitle();
@@ -127,7 +132,7 @@ function typeEraseText(element, text, delay = 100, eraseDelay = 3000) {
 // Function to type the "Software Developer" text
 function typeHighlight() {
     const highlight = document.getElementById("highlight");
-    const text = "Software Developer";
+    const text = "Evans Osumba | Software Developer";
     let index = 0;
 
     function type() {
