@@ -36,6 +36,7 @@ body {
 .nav-list {
     display: flex;
     gap: 2rem;
+    color: #00ff88;
 }
 
 .nav-list a {
@@ -70,7 +71,7 @@ body {
 }
 
 .first_text {
-    font-size: 3rem;
+    font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -79,6 +80,7 @@ body {
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     color: transparent;
+    font-size: 2rem;
 }
 
 .subtitle {
@@ -294,6 +296,10 @@ body {
     color: var(--text-color);
 }
 
+
+
+
+
 /* Education Section */
 .education {
     padding: 4rem 5%;
@@ -307,24 +313,125 @@ body {
     justify-content: center;
 }
 
-.education-item {
-    background: var(--card-bg);
+.card {
+    width: 300px;
+    height: 300px; /* Increased height to accommodate content */
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.education-front.card-front,
+.education-back.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     padding: 2rem;
     border-radius: 20px;
     text-align: center;
-    width: 300px;
 }
 
-.education-item img {
+.education-front.card-front {
+    background: var(--card-bg);
+    color: var(--text-color);
+    transform: rotateY(0deg);
+}
+
+.education-back.card-back {
+    background: var(--card-bg);
+    color: var(--text-color);
+    transform: rotateY(180deg);
+}
+
+.education-front.card-front img,
+.education-back.card-back img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 1rem;
 }
 
-.education-item p {
+.education-front.card-front p {
     font-size: 0.9rem;
     color: var(--text-color);
 }
+
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.skills-list li {
+    position: relative;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.skills-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0.5rem;
+    color: #4CAF50; /* Green checkmark */
+    font-weight: bold;
+}
+
+.skills-list li:hover {
+
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  
+}
+
+/* Education Logo Styling */
+.edu-logo {
+    width: 60px; /* Fixed width for consistency */
+    height: 60px; /* Fixed height for consistency */
+    object-fit: contain; /* Ensures logo fits without distortion */
+    border-radius: 50%; /* Circular shape */
+    margin: 0 auto 1rem; /* Centered with bottom margin */
+    padding: 5px; /* Inner spacing */
+    background: rgba(255, 255, 255, 0.1); /* Subtle background */
+    transition: transform 0.3s ease; /* Smooth animation */
+}
+
+.education-front.card-front .edu-logo {
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for front */
+}
+
+.education-back.card-back .edu-logo {
+    width: 80px; /* Slightly smaller on back */
+    height: 80px;
+    border: 2px dashed #4CAF50; /* Dashed green border to match skills */
+}
+
+.card:hover .edu-logo {
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+
+/* Ensure image doesn't overflow card */
+.education-front.card-front img.edu-logo,
+.education-back.card-back img.edu-logo {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
 
 
 /* Projects Section */
@@ -332,53 +439,74 @@ body {
     padding: 4rem 5%;
     background: var(--bg-color);
     position: relative;
+    overflow: hidden;
 }
 
 .projects-container {
-    width: fit-content;
-    display: flex;
-    gap: 0rem;
+    width: 100%;
     overflow: hidden;
     position: relative;
+}
+
+.projects-wrapper {
+    display: flex;
+    gap: 20px; /* Reduced gap */
+    transition: transform 0.6s ease-in-out; /* Smoother animation */
 }
 
 .project-card {
     background: var(--card-bg);
-    border-radius: 5px;
+    border-radius: 3px;
     overflow: hidden;
-    width: 280px;
-    height: 300px;
-    position: relative;
-    transition: transform 0.3s ease;
+    width: 600px; /* Larger width */
+    height: 450px; /* Larger height */
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project-card:hover {
+    transform: scale(1.03); /* Subtle hover effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
 
 .project-card img {
     width: 100%;
-    height: 200px;
+    height: 300px; /* Larger image */
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
 }
 
 .project-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 1rem;
+    position: relative;
+    padding: 1.5rem;
     text-align: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
-
 .project-text h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #fff;
 }
 
 .project-text a {
     color: var(--primary-color);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.project-text a:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
 }
 
 .prev, .next {
@@ -388,19 +516,52 @@ body {
     background: var(--primary-color);
     color: var(--bg-color);
     border: none;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.prev:hover, .next:hover {
+    background: darken(var(--primary-color), 10%);
 }
 
 .prev {
-    left: 1rem;
+    left: 1.5rem;
 }
 
 .next {
-    right: 1rem;
+    right: 1.5rem;
 }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .project-card {
+        width: 380px; /* Slightly smaller for medium screens */
+        height: 400px;
+    }
+    .project-card img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-card {
+        width: 300px; /* One card visible on mobile */
+        height: 380px;
+    }
+    .project-card img {
+        height: 230px;
+    }
+    .prev, .next {
+        padding: 0.6rem;
+        font-size: 1.5rem;
+    }
+}
+
+
 
 /* Experience Section */
 .experience {
