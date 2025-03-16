@@ -200,7 +200,7 @@ function typeEraseHighlight() {
             setTimeout(type, 100); // Typing speed
         } else if (index === text.length && !isErasing) {
             isErasing = true;
-            setTimeout(erase, 5000); // Wait 5 seconds before erasing
+            setTimeout(erase, 10000); // Wait 5 seconds before erasing
         }
     }
 
@@ -235,7 +235,7 @@ function cycleSubtitles() {
                 setTimeout(type, 100); // Typing speed
             } else if (index === text.length && !isErasing) {
                 isErasing = true;
-                setTimeout(erase, 5000); // Wait 5 seconds before erasing
+                setTimeout(erase, 8000); // Wait 5 seconds before erasing
             }
         }
 
@@ -243,7 +243,7 @@ function cycleSubtitles() {
             if (index > 1) { // Stop erasing at the first letter
                 subtitle.textContent = text.substring(0, index - 1);
                 index--;
-                setTimeout(erase, 50); // Erasing speed
+                setTimeout(erase, 80); // Erasing speed
             } else {
                 isErasing = false;
                 setTimeout(type, 100); // Wait 1 second before retyping
