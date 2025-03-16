@@ -158,29 +158,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form Submission
-const contactForm = document.getElementById('contact-form');
+const contactForm = document.getElementById("contact-form");
 
-contactForm.addEventListener('submit', function (e) {
+contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     // Get form values
-    const name = document.getElementById('name').value;
-    const subject = document.getElementById('subject').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('message').value;
+    const name = document.getElementById("name").value;
+    const subject = document.getElementById("subject").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
 
     // Construct email body with Name and Phone at the top
     const emailBody = `Name: ${name}\nPhone: ${phone}\n\n${message}`;
 
-    // Gmail compose URL
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=osumbaevans21@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    // Check if the user is on a mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-    // Open Gmail compose in a new tab
-    window.open(gmailUrl, '_blank');
+    if (isMobile) {
+        // Open Gmail app on mobile
+        window.location.href = `mailto:osumbaevans21@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    } else {
+        // Open Gmail web interface on desktop
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=osumbaevans21@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        window.open(gmailUrl, "_blank");
+    }
 
     // Show success message and reset form
     setTimeout(() => {
-        alert('Email prepared! Please click "Send" in Gmail.');
+        alert("Email prepared! Please click 'Send' in Gmail.");
         contactForm.reset();
     }, 500); // Delay to ensure Gmail opens first
 });
